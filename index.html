@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grille des Salaires</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .salary-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .salary-table thead {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+        }
+        
+        .salary-table th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .salary-table tbody tr {
+            border-bottom: 1px solid #eaeaea;
+            transition: all 0.3s ease;
+        }
+        
+        .salary-table tbody tr:hover {
+            background-color: #f5f9ff;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .salary-table td {
+            padding: 16px 15px;
+            vertical-align: top;
+        }
+        
+        .salary-table tbody tr:nth-child(odd) {
+            background-color: #f8fafc;
+        }
+        
+        .salary-table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        
+        .grade-cell {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .salary-cell {
+            font-weight: 600;
+            color: #27ae60;
+        }
+        
+        .commission-cell {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+        
+        .responsibilities {
+            max-width: 300px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            padding: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .salary-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .salary-table th, 
+            .salary-table td {
+                white-space: nowrap;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grille des Salaires</h1>
+            <p class="subtitle">Structure de rémunération et responsabilités</p>
+        </header>
+        
+        <table class="salary-table">
+            <thead>
+                <tr>
+                    <th>Grade</th>
+                    <th>Salaire Minimum Hebdo</th>
+                    <th>Rémunération toutes les 15 minutes</th>
+                    <th>Commission sur Vente<br><small>(Uniquement les achats directs)</small></th>
+                    <th>Responsabilités Clés</th>
+                    <th>Primes<br><small>(Activité hebdomadaire)</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="grade-cell">Patron</td>
+                    <td class="salary-cell">$40 000</td>
+                    <td class="salary-cell">$1 200</td>
+                    <td class="commission-cell">25%</td>
+                    <td class="responsibilities">Plein pouvoir de vente, négociation de gros contrats, gestion de deals spéciaux.</td>
+                    <td>Varie selon l'activité</td>
+                </tr>
+                <tr>
+                    <td class="grade-cell">Co-patron</td>
+                    <td class="salary-cell">$35 000</td>
+                    <td class="salary-cell">$900</td>
+                    <td class="commission-cell">20%</td>
+                    <td class="responsibilities">Plein pouvoir de vente, négociation de gros contrats, gestion de deals spéciaux.</td>
+                    <td>Varie selon l'activité</td>
+                </tr>
+                <tr>
+                    <td class="grade-cell">Manager</td>
+                    <td class="salary-cell">$25 000</td>
+                    <td class="salary-cell">$700</td>
+                    <td class="commission-cell">18%</td>
+                    <td class="responsibilities">Vente autonome de tous types de biens, supervision stagiaires/employés, validation des ventes.</td>
+                    <td>Varie selon l'activité</td>
+                </tr>
+                <tr>
+                    <td class="grade-cell">Employé</td>
+                    <td class="salary-cell">$20 000</td>
+                    <td class="salary-cell">$500</td>
+                    <td class="commission-cell">15%</td>
+                    <td class="responsibilities">Réalisation de ventes simples (appartements, petites maisons, entrepôts) sans supervision. Validation Manager/Patron pour biens importants (villa...).</td>
+                    <td>Varie selon l'activité</td>
+                </tr>
+                <tr>
+                    <td class="grade-cell">Stagiaire</td>
+                    <td class="salary-cell">$15 000</td>
+                    <td class="salary-cell">$300</td>
+                    <td class="commission-cell">8%</td>
+                    <td class="responsibilities">Accompagnement vente, préparation papiers, visites. Signature finale valide par un supérieur (Patron, Co patron, Manager).</td>
+                    <td>Varie selon l'activité</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <footer>
+            <p>Document interne - Dernière mise à jour: <span id="current-date"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Ajouter la date actuelle
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('fr-FR');
+    </script>
+</body>
+</html>
